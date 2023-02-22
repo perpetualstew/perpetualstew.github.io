@@ -1,56 +1,38 @@
 <!DOCTYPE html>
-<html>
-<body>
-<?php
-  $iphone = strpos($_SERVER[‘HTTP_USER_AGENT’],”iPhone”);
-  $android = strpos($_SERVER[‘HTTP_USER_AGENT’],”Android”);
-  $palmpre = strpos($_SERVER[‘HTTP_USER_AGENT’],”webOS”);
-  $berry = strpos($_SERVER[‘HTTP_USER_AGENT’],”BlackBerry”);
-  $ipod = strpos($_SERVER[‘HTTP_USER_AGENT’],”iPod”);
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perpetual Stew</title>
+  </head>
+  <body>
+    <iframe src="https://www.youtube.com/embed/tNstrxGkuQM" title="Perpetual Stew" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen
+    ></iframe>
+    <?php
+      $iphone = strpos($_SERVER[‘HTTP_USER_AGENT’],”iPhone”);
+      $android = strpos($_SERVER[‘HTTP_USER_AGENT’],”Android”);
+      $palmpre = strpos($_SERVER[‘HTTP_USER_AGENT’],”webOS”);
+      $berry = strpos($_SERVER[‘HTTP_USER_AGENT’],”BlackBerry”);
+      $ipod = strpos($_SERVER[‘HTTP_USER_AGENT’],”iPod”);
 
-  if ($iphone || $android || $palmpre || $ipod || $berry == true) 
-  {
+      if ($iphone || $android || $palmpre || $ipod || $berry == true) 
+      {
       echo “<script>window.location=’https://www.thelightphone.com/products?ref=perpetualstew'</script>”;
-   }
-?>
-</body>
+      }
+    ?>
+  </body>
+  <style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    iframe{
+        width: 100%;
+        height: 99vh;
+        object-fit: fill;
+    }
+    body {background-color: black;}
+  </style>
 </html>
 
-<style>
-.video-container{
-  width: 95vw;
-  height: 95vh;
-}
-    
-iframe {
-  border: none;
-  box-shadow: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 95vw;
-  height: 95vh;
-  transform: translate(-50%, -50%);
-}
-</style>
-<style>
-@media (min-aspect-ratio: 16/9) {
-  .video-container iframe {
-    height: 55vw;
-  }
-}
-  
-@media (max-aspect-ratio: 16/9) {
-  .video-container iframe {
-    width: 177.777777vh;
-  }
-}
-</style>  
-
-<div class="video-container">
-  <iframe src="https://www.youtube.com/embed/4AOqIW16VvU?&rel=0&autoplay=1"></iframe>
-</div>
-
-<style>
-  body {background-color: black;}
-</style>
